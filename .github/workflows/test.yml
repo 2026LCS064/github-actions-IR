@@ -1,4 +1,4 @@
-name: Python Calculator Test
+name: Calculator Test
 
 on:
   push:
@@ -17,5 +17,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run calculator
-        run: python calculator.py
+      - name: Test Addition
+        run: |
+          printf "10\n5\n+\n" | python calculator.py
+
+      - name: Test Subtraction
+        run: |
+          printf "10\n5\n-\n" | python calculator.py
+
+      - name: Test Multiplication
+        run: |
+          printf "10\n5\n*\n" | python calculator.py
+
+      - name: Test Division
+        run: |
+          printf "10\n5\n/\n" | python calculator.py
